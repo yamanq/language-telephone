@@ -11,10 +11,10 @@
 	{{> loginButtons}}
 	</div>
 	<div id="languagefrom">
-	{{fromlang}}
+	From: {{fromlang}}
 	</div>
 	<div id="languageto">
-	{{tolang}}
+	To: {{tolang}}
 	</div>
 	<div id="current">
 	{{currenttranslation}}
@@ -30,6 +30,5 @@
 	</div>
 </template>
 <template name="translation">
-	to {{language}}
-	{{translation}}
+	{{language}}: {{translation}} <br>
 </template>

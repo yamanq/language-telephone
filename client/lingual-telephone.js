@@ -5,15 +5,15 @@ Template.hello.helpers({
   },
   currenttranslation: function() {
     var col = translations.find().fetch();
-    return col.slice(col.length - 2, col.length - 1).translation;
+    return col.slice(col.length - 2, col.length - 1)[0].translation;
   },
   fromlang: function() {
     var col = translations.find().fetch();
-    return col.slice(col.length - 2, col.length - 1).language;
+    return col.slice(col.length - 2, col.length - 1)[0].language;
   },
   tolang: function() {
     var col = translations.find().fetch();
-    return col.slice(col.length - 1, col.length).language;
+    return col.slice(col.length - 1 , col.length)[0].language;
   }
 });
 
