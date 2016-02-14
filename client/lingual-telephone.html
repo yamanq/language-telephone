@@ -1,14 +1,15 @@
 <head>
-  <title>lingual-telephone</title>
+  <title>Lingual Telephone</title>
 </head>
-
 <body>
-  <h1>Welcome to Meteor!</h1>
-
+  <h1>Translate the Sentence!</h1>
   {{> hello}}
 </body>
 
 <template name="hello">
+	<div id="login">
+	{{> loginButtons}}
+	</div>
   <button>Click Me</button>
   <p>You've pressed the button {{counter}} times.</p>
 </template>
