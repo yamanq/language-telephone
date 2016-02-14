@@ -11,17 +11,25 @@
 	{{> loginButtons}}
 	</div>
 	<div id="languagefrom">
-	<!--random language-->
+	{{fromlang}}
 	</div>
 	<div id="languageto">
-	<!--random language-->
+	{{tolang}}
+	</div>
+	<div id="current">
+	{{currenttranslation}}
 	</div>
 	<div id="sentence">
-		<form action="demo_form.asp">
-		Translation: <input type="text" name="Translation">
+		Translation: <input id="submission" type="text" name="Translation">
 		<input type="submit" value="Submit">
-		</form>
 	</div>
 	<div id="previous translations">
+	{{#each translations}}
+		{{>translation}}
+	{{/each}}
 	</div>
+</template>
+<template name="translation">
+	to {{language}}
+	{{translation}}
 </template>

@@ -19,6 +19,16 @@ Template.hello.helpers({
 
 Template.hello.events({
   'click button': function () {
-    Session.set('counter', Session.get('counter') + 1);
+	text = document.getElementById("submission").value;
+    Meteor.call("add_translation",this,);	
   }
+});
+
+Template.translation.helpers({
+	language: function() {
+		return this.language;
+	},
+	translation: function() {
+		return this.translation;
+	}
 });
