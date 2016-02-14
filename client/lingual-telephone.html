@@ -2,35 +2,42 @@
   <title>Language Telephone</title>
 </head>
 <body>
-  <h1 align="center">Translate the sentence from one language to another.</h1>
   {{> hello}}
 </body>
 
 <template name="hello">
+<div align="center" id="überall">
+	<div align="center" id="title">
 	<div align="right" id="login">
 	{{> loginButtons}}
 	</div>
+	<h1 align="center" style="font-size:36pt">Translate</h1>
+	</div>
 	<div id="languagefrom">
-	From: {{fromlang}}
+	<p>From: <b>{{fromlang}}</b></p>
 	</div>
 	<div align="right" id="languageto">
-	To: {{tolang}}
+	<p>To: <b>{{tolang}}</b></p>
 	</div>
-	<div id="current">
-	{{currenttranslation}}
+	<div align="center" id="current">
+	<p>Current Translation: <span style="color: #FF0000;">{{currenttranslation}}</span></p>
 	</div>
-	<div id="sentence">
-		Translation: <input id="submission" type="text" name="Translation">
+	<div align="center" id="sentence">
+		<input id="submission" type="text" name="Translation" value="Translation" size="70">
 		<button id='submitbutton'>Submit</button>
 	</div>
 	{{#if contributed}}
-		<div id="previous translations">
+		<div id="previous-translations">
+		<p id="previous-translations-sub">Past Translations:</p>
+		<ul>
 		{{#each translations}}
-			{{>translation}}
+			<li>{{>translation}}</li>
 		{{/each}}
+		</ul>
 		</div>
 	{{/if}}
+</div>
 </template>
 <template name="translation">
-	{{language}}: {{translation}} {{contrib}}<br>
+	<p><b>{{language}}:</b> {{translation}} <span style="color: #CBE896;">{{contrib}}</span></p><br>
 </template>

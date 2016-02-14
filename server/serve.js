@@ -37,7 +37,7 @@ languages = [
 	"Hmong",
 	"Hungarian",
 	"Icelandic",
-	"Igbo",
+	"Okonkwo",
 	"Indonesian",
 	"Irish",
 	"Italian",
