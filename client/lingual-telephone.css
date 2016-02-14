@@ -1,55 +1,96 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('./lato-light.woff');
+}
+
 body {
 	background-image: url('./bg.png');
+	overflow: hidden;
 }
 h1, p {
-	font-family: Lato, Helvetica, sans-serif;
 	line-height: 5px;
+	font-weight: normal !important;
+	margin-top: 1% !important;
 }
-#überall {
-	background-color: #149911;
-	border-radius: 5px;
-	height: 100%;
-	width: 75%;
-	position: fixed;
-	top: 0;
-	left: 12.5%;
+#scroll {
+	position: relative;
+	height: 200px;
+}
+
+#title {
+	padding-top: 4%;
 }
 #login {
-	position: fixed;
-	top: 0;
-	right: 15%;
+    margin-top: -4%;
+    margin-bottom: 4%;
+    margin-right: 3.5%;
+}
+#words {
+	font-size: 15pt;
+}
+#uberall {
+	background-color: #E3E8E5;
+	border-radius: 35px;
+	height: 32%;
+	width: 75%;
+	color: #11230E;
+	font-family: 'Lato';
+	margin: auto;
+	margin-top: 4%;
+	box-shadow: 7px 8px 4px 3px #444;
+	padding-bottom: 17%;
+}
+#from {
+	margin-left: -71%;
+	margin-bottom: -1.84%;
+}
+#to {
+	margin-right: -71%;
 }
 #languagefrom {
-	position: fixed;
-	top: 50px;
-	left: 200px;
+	display: inline;
 	font-size: 20pt;
 }
-#languageto {
-	position: fixed;
-	top: 50px;
-	right: 200px;
-	font-size: 20pt;
-}
+
 #current {
-	position: fixed;
-	top: 100px;
-	left: 200px;
-	font-size:18pt;
+    text-align: center;
+    margin-top: 5%;
+    font-size: 25pt;
+    line-height: normal;
+    margin-bottom: 2.5%;
 }
 #sentence {
-	position: fixed;
-	top: 150px;
-	left: 200px;
+	height: 33px;
+	margin-top: 0.5%;
 }
 #previous-translations-sub {
-	position: fixed;
-	top: 180px;
-	left: 200px;
 	font-size: 20pt;
 }
 #previous-translations {
-	position: fixed;
-	top: 220px;
-	left: 200px;
+	background-color: #E3E8E5;
+	border-radius: 35px;
+	width: 75%;
+	margin: auto;
+	margin-top: 4%;
+	padding-top: 4%;
+	padding-left: 4%;
+	padding-right: 4%;
+	padding-bottom: 2.5%;
+	line-height: 0.1em;
+	box-shadow: 7px 8px 4px 3px #444;
+}
+#submission {
+	width: 750px;
+}
+#submitbutton {
+	padding-top: 1.1%;
+	background-color: #607fa5;
+	-webkit-transition: background-color 2s ease, color 1s ease;
+	-moz-transition: background-color 2s ease, color 1s ease;
+	-ms-transition: background-color 2s ease, color 1s ease; 
+	transition: background-color 2s ease, color 1s ease;
+
+}
+#submitbutton:hover {
+	background-color: #415772;
 }

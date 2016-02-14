@@ -21,3 +21,6 @@ insecure                # Allow all DB writes from clients (for prototyping)
 accounts-ui
 accounts-google
 ongoworks:security
+semantic:ui-input
+semantic:ui-css
+keepnox:perfect-scrollbar

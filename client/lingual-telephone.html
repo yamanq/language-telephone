@@ -1,43 +1,49 @@
 <head>
   <title>Language Telephone</title>
+  <link href='http://fonts.googleapis.com/css?family=Lato-Light:400,700' rel='stylesheet' type='text/css'>
+  <link rel="icon" href="/favicon.ico">
 </head>
 <body>
   {{> hello}}
 </body>
 
 <template name="hello">
-<div align="center" id="überall">
+
+<div align="center" id="uberall">
 	<div align="center" id="title">
+		<h1 align="center" style="font-size:36pt">Translate It.</h1>
+	</div>
 	<div align="right" id="login">
-	{{> loginButtons}}
+		{{> loginButtons}}
 	</div>
-	<h1 align="center" style="font-size:36pt">Translate</h1>
-	</div>
+
 	<div id="languagefrom">
-	<p>From: <b>{{fromlang}}</b></p>
+		<p id='from'>From: <b>{{fromlang}}</b></p>
+		<p id='to'>To: <b>{{tolang}}</b></p>
 	</div>
-	<div align="right" id="languageto">
-	<p>To: <b>{{tolang}}</b></p>
-	</div>
+
 	<div align="center" id="current">
-	<p>Current Translation: <span style="color: #FF0000;">{{currenttranslation}}</span></p>
+		<p>{{currenttranslation}}</p>
 	</div>
-	<div align="center" id="sentence">
-		<input id="submission" type="text" name="Translation" value="Translation" size="70">
-		<button id='submitbutton'>Submit</button>
+
+	<div class="ui action input" id="sentence">
+	  <input type="text" placeholder="Translation" id="submission">
+	  <button class="ui button" id="submitbutton">Submit</button>
 	</div>
-	{{#if contributed}}
-		<div id="previous-translations">
-		<p id="previous-translations-sub">Past Translations:</p>
-		<ul>
-		{{#each translations}}
-			<li>{{>translation}}</li>
-		{{/each}}
-		</ul>
-		</div>
-	{{/if}}
 </div>
+{{#if contributed}}
+	<div id="previous-translations">
+		<p id="previous-translations-sub">Past Translations:</p>
+		<div id="scroll">
+			<ul>
+				{{#each translations}}
+					{{> translation}}
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+{{/if}}
 </template>
 <template name="translation">
-	<p><b>{{language}}:</b> {{translation}} <span style="color: #CBE896;">{{contrib}}</span></p><br>
+	<p><b>{{language}}:</b> <span id='words'>{{translation}}</span> <span style="color: #244F26;font-size: 9pt;">{{contrib}}</span></p><br>
 </template>

@@ -37,7 +37,7 @@ languages = [
 	"Hmong",
 	"Hungarian",
 	"Icelandic",
-	"Okonkwo",
+	"Igbo",
 	"Indonesian",
 	"Irish",
 	"Italian",
@@ -114,7 +114,7 @@ Meteor.methods({
 		} else {
 			contributor = contributor.contributor;
 		}
-		if (!(contributor===user)) {
+		if (!(contributor===user) && !(translation==="")) {
 			translations.update({"translation": ""}, {$set: {"translation": translation, "contributor": user}});
 
 			index = Math.floor((Math.random() * languages.length));

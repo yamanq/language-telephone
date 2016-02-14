@@ -1,3 +1,7 @@
+$(function() {
+    $('#scroll').perfectScrollbar();
+});
+
 Template.hello.helpers({
   translations: function () {
     var col = translations.find().fetch();
