@@ -1,6 +1,19 @@
 Template.hello.helpers({
-  counter: function () {
-    return Session.get('counter');
+  translations: function () {
+    var col = translations.find().fetch();
+    return col.slice(0, col.length - 1);
+  },
+  currenttranslation: function() {
+    var col = translations.find().fetch();
+    return col.slice(col.length - 2, col.length - 1).translation;
+  },
+  fromlang: function() {
+    var col = translations.find().fetch();
+    return col.slice(col.length - 2, col.length - 1).language;
+  },
+  tolang: function() {
+    var col = translations.find().fetch();
+    return col.slice(col.length - 1, col.length).language;
   }
 });
 
