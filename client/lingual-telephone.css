@@ -1,3 +1,6 @@
 body {
 	background-image: url('./bg.png');
 }
+h1, p {
+	font-family: Lato, Helvetica, sans-serif;
+}
