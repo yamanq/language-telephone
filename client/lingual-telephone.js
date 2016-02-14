@@ -18,9 +18,9 @@ Template.hello.helpers({
 });
 
 Template.hello.events({
-  'click button': function () {
+  'click #submitbutton': function () {
 	text = document.getElementById("submission").value;
-    Meteor.call("add_translation",this,);	
+    Meteor.call("add_translation", this, text);	
   }
 });
 
