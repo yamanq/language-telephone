@@ -1,5 +1,4 @@
 translations.permit(['insert', 'update', 'remove']).never().apply();
-contributors.permit(['insert', 'update', 'remove']).never().apply();
 
 languages = [
 	"Afrikaans",
@@ -95,32 +94,35 @@ languages = [
 ];
 
 translations.remove({});
-contributors.remove({});
 
 index = Math.floor((Math.random() * languages.length));
+
 translations.insert({
 	"translation": "",
-	"language": languages[index]
+	"language": languages[index],
+	"contributor": ""
 })
 
 Meteor.methods({
 	add_translation: function(chrome, translation) {
+		console.log("adding translation");
 		user = Meteor.user().services.google.email;
-		if (contributors.find({"user": user}).fetch().length === 0) {
-
-			translations.update({"translation": ""}, {$set: {"translation": translation}});
+		var col = translations.find().fetch();
+		contributor = col.slice(col.length - 2 , col.length - 1)[0];
+		if (contributor === undefined) {
+			contributor = "";
+		} else {
+			contributor = contributor.contributor;
+		}
+		if (!(contributor===user)) {
+			translations.update({"translation": ""}, {$set: {"translation": translation, "contributor": user}});
 
 			index = Math.floor((Math.random() * languages.length));
 			translations.insert({
 				"language": languages[index],
-				"translation": ""
-			});
-
-			contributors.insert({
-				"user": user
+				"translation": "",
+				"contributor": ""
 			});
 		}
-
-
 	}
 });

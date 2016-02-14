@@ -1,5 +1,5 @@
 <head>
-  <title>Lingual Telephone</title>
+  <title>Language Telephone</title>
 </head>
 <body>
   <h1 align="center">Translate the sentence from one language to another.</h1>
@@ -13,7 +13,7 @@
 	<div id="languagefrom">
 	From: {{fromlang}}
 	</div>
-	<div id="languageto">
+	<div align="right" id="languageto">
 	To: {{tolang}}
 	</div>
 	<div id="current">
@@ -23,12 +23,14 @@
 		Translation: <input id="submission" type="text" name="Translation">
 		<button id='submitbutton'>Submit</button>
 	</div>
-	<div id="previous translations">
-	{{#each translations}}
-		{{>translation}}
-	{{/each}}
-	</div>
+	{{#if contributed}}
+		<div id="previous translations">
+		{{#each translations}}
+			{{>translation}}
+		{{/each}}
+		</div>
+	{{/if}}
 </template>
 <template name="translation">
-	{{language}}: {{translation}} <br>
+	{{language}}: {{translation}} {{contrib}}<br>
 </template>
