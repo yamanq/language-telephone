@@ -100,8 +100,8 @@ Meteor.methods({
 	add_translation: function(chrome, translation) {
 		user = Meteor.user().services.google.email
 		if (contributors.find({"user": user}).fetch().length === 0) {
-			first = translations.find({"translation": ""}).fetch()[0].language;
-			translations.update({"translation": ""}, $set: {"language": before, "translation": translation});
+			first = translations.find({"translation": " "}).fetch()[0].language;
+			translations.update({"translation": " "}, $set: {"language": before, "translation": translation});
 
 			index = Math.floor((Math.random() * languages));
 			translations.insert({

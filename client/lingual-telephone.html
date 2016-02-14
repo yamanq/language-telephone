@@ -7,8 +7,22 @@
 </body>
 
 <template name="hello">
-	<div id="login">
+	<div align="right" id="login">
 	{{> loginButtons}}
+	</div>
+	<div id="languagefrom">
+	<!--random language-->
+	</div>
+	<div id="languageto">
+	<!--random language-->
+	</div>
+	<div id="sentence">
+		<form action="demo_form.asp">
+		Translation: <input type="text" name="Translation">
+		<input type="submit" value="Submit">
+		</form>
+	</div>
+	<div id="previous translations">
 	</div>
   <button>Click Me</button>
   <p>You've pressed the button {{counter}} times.</p>
